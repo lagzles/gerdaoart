@@ -41,5 +41,6 @@ class ImagesController < ApplicationController
 
   def set_image
     @image = Image.find(params[:id])
+  end
 
 end
