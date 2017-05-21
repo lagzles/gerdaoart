@@ -13,18 +13,23 @@ class ImagesController < ApplicationController
   end
 
   def create
-    # Loop throw images
-    params[:image][:url].each do |url|
-      case @imageable
-        when LibraryFile
-          @image = Image.new(image_params)
-        else
-          @image = @imageable.images.new(image_params)
-      end
-      @image.url = url
-      @image.title = url.original_filename[0..-5]
+    # # Loop throw images
+    # params[:image][:url].each do |url|
+    #   case @imageable
+    #     when LibraryFile
+    @image = Image.new(image_params)
+    #     else
+    #       @image = @imageable.images.new(image_params)
+    #   end
+    #   @image.url = url
+    #   @image.title = url.original_filename[0..-5]
+    if @image.valid?
       @image.save
+      redirect_to images_path
+    else
+      render :new
     end
+    # redirect_to root_url
   end
 
   def edit

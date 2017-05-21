@@ -37,7 +37,6 @@ class AboutsController < ApplicationController
   def destroy
     @about.destroy
     redirect_to abouts_url, notice: 'About was successfully destroyed.'
-    end
   end
 
   private
