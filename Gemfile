@@ -11,7 +11,8 @@ gem 'autoprefixer-rails'
 # S3 amazon direct upload
 gem 'aws-sdk', '~> 2'
 # Upload de images
-# gem 'carrierwave'
+gem 'carrierwave'
+gem 'fog'
 gem 'carrierwave-aws'
 gem 'mini_magick' # , :git => 'git://github.com/minimagick/minimagick.git', :ref => '6d0f8f953112cce6324a524d76c7e126ee14f392'
 
