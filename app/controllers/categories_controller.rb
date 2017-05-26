@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
     if @category.update(category_params)
       redirect_to categories_url, notice: 'Category was successfully updated.'
     else
-      render :edit }
+      render :edit 
     end
   end
 
