@@ -17,7 +17,6 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-
     if @category.valid?
       @category.save
       redirect_to categories_url, notice: 'Category was successfully created.'
@@ -28,7 +27,7 @@ class CategoriesController < ApplicationController
 
   def update
     if @category.update(category_params)
-      redirect_to @category, notice: 'Category was successfully updated.'
+      redirect_to categories_url, notice: 'Category was successfully updated.'
     else
       render :edit }
     end
@@ -47,6 +46,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit()
+      params.require(:category).permit(:name)
     end
 end
