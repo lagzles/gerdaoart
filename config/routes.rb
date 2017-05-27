@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   root 'images#index'
 
-  get 'login', :to => 'access#login'
-  post 'attempt_login'
+  get 'login', to: 'access#login'
+  post 'access/attempt_login'
 
   resources :users
   resources :abouts
