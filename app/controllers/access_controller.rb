@@ -18,7 +18,7 @@ class AccessController < ApplicationController
       session[:user_id] = found_user.id
       redirect_to root_url, notice: 'Login realizado com sucesso'
     else # Caso não encontre um usuario autorizado
-      render('login'), notice: 'Combinação de usuário/senha inválida'
+      render 'login', notice: 'Combinação de usuário/senha inválida'
     end
   end
 end
