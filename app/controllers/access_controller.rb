@@ -21,4 +21,11 @@ class AccessController < ApplicationController
       render 'login', notice: 'Combinação de usuário/senha inválida'
     end
   end
+
+  def logout
+    session[:user_id] = nil
+    session[:user] = nil
+    flash[:info] = 'Logged out'
+    redirect_to root_path
+  end
 end

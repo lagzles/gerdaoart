@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'login', to: 'access#login'
   post 'access/attempt_login'
+  get 'logout', to: 'access#logout'
 
   resources :users
   resources :abouts
