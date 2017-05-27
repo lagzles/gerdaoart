@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged?, :has_access?
 
   def logged?
-    User.find(session[:user_id])
+    session[:user_id]
   end
 
   def has_access?
