@@ -1,2 +1,13 @@
 <p> images#index</p>
-<!-- <%= link_to 'new', new_image_path %> -->
+
+<div class='row'>
+  <%- @images.each do |image|%>
+    <div class='col-lg-6 col-md-6' >
+      <%= image_tag image.url.url(:thumb) %>
+      <%= image.title%>
+    </div>
+  <%end%>
+</div>
+
+
+<%= link_to 'new', new_image_path %>

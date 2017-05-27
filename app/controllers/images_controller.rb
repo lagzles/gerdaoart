@@ -27,7 +27,7 @@ class ImagesController < ApplicationController
       @image.save
       redirect_to images_path
     else
-      render :new
+      render :new, notice: "#{@image.errors.full_messages}"
     end
     # redirect_to root_url
   end
