@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Abouts</h1>
-
 <%- @abouts.each do |about| %>
   <p><%= about.body %></p>
+  <%= link_to 'editar', edit_about_path(about)%>
 <% end %>
 
 <%= link_to 'New About', new_about_path %>
