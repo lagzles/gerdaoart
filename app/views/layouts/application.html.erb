@@ -37,14 +37,6 @@
     </div>
   </body>
   <footer>
-    <div class="container">
-      <p class='text-muted'> GerdaoArt - 2017
-        <%- if logged?%>
-          <%= link_to 'G&Art', logout_path%>
-        <%- else%>
-          <%= link_to 'G&Art', login_path%>
-        <% end %>
-      </p>
-    </div>
+    <%= render 'partials/footer'%>
   </footer>
 </html>
