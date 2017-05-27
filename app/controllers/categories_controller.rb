@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :has_access?, except: [:index, :show]
 
   def index
     @categories = Category.all
@@ -29,7 +30,7 @@ class CategoriesController < ApplicationController
     if @category.update(category_params)
       redirect_to categories_url, notice: 'Category was successfully updated.'
     else
-      render :edit 
+      render :edit
     end
   end
 

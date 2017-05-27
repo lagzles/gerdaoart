@@ -1,5 +1,7 @@
 class AboutsController < ApplicationController
   before_action :set_about, only: [:show, :edit, :update, :destroy]
+  before_action :has_access?, except: [:index, :show]
+  
 
   def index
     @abouts = About.all

@@ -2,7 +2,7 @@
 
 <%- @abouts.each do |about| %>
   <p><%= about.body %></p>
-  <%= link_to 'editar', edit_about_path(about)%>
+  <%= link_to 'editar', edit_about_path(about) if logged?%>
 <% end %>
 
-<%= link_to 'New About', new_about_path %>
+<%= link_to 'New About', new_about_path if logged?%>

@@ -1,5 +1,7 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update]
+  before_action :has_access?, except: [:index, :show]
+  
 
   def index
     @images = Image.all.order(:title)
