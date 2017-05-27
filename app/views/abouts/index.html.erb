@@ -2,6 +2,8 @@
 
 <h1>Abouts</h1>
 
-<p><%= @about.body %></p>
+<%- @abouts.each do |about| %>
+  <p><%= about.body %></p>
+<% end %>
 
 <%= link_to 'New About', new_about_path %>
