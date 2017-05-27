@@ -10,19 +10,15 @@ class ImagesController < ApplicationController
 
   def new
     @image = Image.new
+    @categories = Category.all
   end
 
   def create
-    # # Loop throw images
-    # params[:image][:url].each do |url|
-    #   case @imageable
-    #     when LibraryFile
     @image = Image.new(image_params)
-    #     else
-    #       @image = @imageable.images.new(image_params)
-    #   end
-    #   @image.url = url
-    #   @image.title = url.original_filename[0..-5]
+    if @image.category_id == nil
+      category = Category.find_or_create_by(name: "#{params[:category]}")
+      @image.category_id = category.id
+    end
     if @image.valid?
       @image.save
       redirect_to images_path
@@ -43,7 +39,7 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:url, :title, :description, :tags)
+    params.require(:image).permit(:url, :title, :description, :tags, :category_id)
   end
 
   def set_image
