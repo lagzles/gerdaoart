@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
+  # root 'home#index'
+  root 'images#index'
 
   get 'login', to: 'access#login'
   post 'access/attempt_login'
