@@ -9,7 +9,7 @@
 <div class="carousel-inner">
   <% carousels.each_with_index do |carousel, i| %>
     <div class="item #{'active' if i == 0}">
-      <%= image_tag(carousel.url.url) %>
+      <%= image_tag('prince.jpg') %>
       <%= link_to image_path(carousel.image) do %>
         <div class="carousel-caption">
           <h2><%= carousel.name %></h2>
@@ -18,5 +18,6 @@
     </div>
   <% end %>
 </header>
-<!-- <script> -->
-<!-- $('.carousel').carousel() -->
+<script>
+ $('.carousel').carousel()
+</script>

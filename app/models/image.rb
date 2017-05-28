@@ -7,4 +7,14 @@ class Image < ApplicationRecord
   has_many :carousels
 
   belongs_to :category
+
+
+    def list_urls
+      urls=[]
+      self.carousels.each do |c|
+        urls << c.url.url
+      end
+      return urls
+    end
+
 end
