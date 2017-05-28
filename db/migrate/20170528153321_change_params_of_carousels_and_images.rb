@@ -11,7 +11,7 @@ class ChangeParamsOfCarouselsAndImages < ActiveRecord::Migration[5.0]
     remove_column :images, :carousel_id
     remove_column :images, :url
     remove_column :images, :order
-    add_column :images, :category_id, :integer, index: true
+    # add_column :images, :category_id, :integer, index: true
   end
 
   def down

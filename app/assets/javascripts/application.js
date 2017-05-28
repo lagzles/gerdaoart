@@ -19,4 +19,4 @@
 // require_tree .
 
 
-// $('.carousel').carousel()
+$('.carousel').carousel()
