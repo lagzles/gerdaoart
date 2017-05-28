@@ -5,6 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Nome</th>
+      <th>descrição</th>
+      <th>Categoria</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,7 +15,10 @@
   <tbody>
     <% @carousels.each do |carousel| %>
       <tr>
-        <td><%= link_to 'Show', carousel %></td>
+        <td><%=  link_to carousel.name, carousel  %></td>
+        <td><%= carousel.description %></td>
+        <td><%= carousel.category.name %></td>
+        <td><%= link_to 'add images', new_carousel_image_path(carousel) %></td>
         <td><%= link_to 'Edit', edit_carousel_path(carousel) %></td>
         <td><%= link_to 'Destroy', carousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

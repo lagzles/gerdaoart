@@ -1,6 +1,6 @@
 class Image < ApplicationRecord
 
-  validates :url, :title, presence: true
+  validates :title, presence: true
 
   mount_uploader :url, ImageUploader
 

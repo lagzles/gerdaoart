@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class='row'>
+  <%= link_to 'nova imagem', new_carousel_image_path(@carousel )%>
+    <%- @carousel.images.order(:order).each do |image|%>
+      <%= image_tag 'yansn.jpg' %>
+    </br>
+      <%= image.title%>
+  <%end%>
+</div>
+
+
+
+
 <%= link_to 'Edit', edit_carousel_path(@carousel) %> |
-<%= link_to 'Back', carousels_path %>
+<%= link_to 'Back', images_path %>

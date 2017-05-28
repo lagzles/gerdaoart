@@ -1,11 +1,43 @@
 
 <div class='row'>
-  <%- @images.each do |image|%>
-    <%= image_tag image.url.url %>
-    <%= image.title%>
-  <%end%>
+  <%- @carousels.each do |carousel| %>
+    <%= carousel_for(carousel.images)%>
+
+    <!-- <header id="carousel" class="carousel slide"> -->
+    <!-- <%- carousel.images.each do |image|%> -->
+    <!-- Indicators -->
+    <!-- <ol class="carousel-indicators"> -->
+      <!-- <% carousel.images.each_with_index do |slide, i| %> -->
+        <!-- <li data-target="#carousel" data-slide-to=#{i) class="#{'active' if i == 0}"></li> -->
+      <!-- <% end %> -->
+    <!-- </ol> -->
+
+  <!-- Wrapper for slides -->
+    <!-- <div class="carousel-inner">
+      <% carousel.images.each_with_index do |slide, i| %>
+        <div class="item #{'active' if i == 0}">
+          <%= image_tag('yansn.jpg') %>
+          <div class="carousel-caption">
+            <h2><%= slide.title %></h2>
+          </div>
+        </div>
+      <% end %>
+    </div> -->
+
+      <!-- <%= image_tag 'yansn.jpg' %>
+      <br/>
+      <%= image.title%> -->
+      <!-- <% end %> -->
+    <!-- </header> -->
+  <% end %>
 </div>
 
 <p>
-  <%= link_to 'new', new_image_path if logged?%>
+<%= link_to 'carousel', new_carousel_path%>
+
+  <!-- <%= link_to 'new', new_image_path if logged?%> -->
 </p>
+
+
+<%= stylesheet_link_tag "home"%>
+<%= javascript_include_tag "home"%>

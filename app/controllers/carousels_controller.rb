@@ -24,21 +24,17 @@ class CarouselsController < ApplicationController
 
     if @carousel.valid?
       @carousel.save
-       redirect_to @carousel, notice: 'Carousel was successfully created.'
+       redirect_to carousels_path, notice: 'Carousel was successfully created.'
     else
        render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @carousel.update(carousel_params)
-        format.html { redirect_to @carousel, notice: 'Carousel was successfully updated.' }
-        format.json { render :show, status: :ok, location: @carousel }
-      else
-        format.html { render :edit }
-        format.json { render json: @carousel.errors, status: :unprocessable_entity }
-      end
+    if @carousel.update(carousel_params)
+      redirect_to @carousel, notice: 'Carousel was successfully updated.'
+    else
+      render :edit
     end
   end
 

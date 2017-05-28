@@ -5,6 +5,7 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.all.order(:title)
+    @carousels = Carousel.all.order(created_at: :asc)
   end
 
   def show
@@ -12,14 +13,14 @@ class ImagesController < ApplicationController
 
   def new
     @image = Image.new
-    @categories = Category.all
+    @carousel = Carousel.find(params[:carousel_id])
   end
 
   def create
     @image = Image.new(image_params)
     if @image.valid?
       @image.save
-      redirect_to images_path
+      redirect_to carousel_path @image.carousel
     else
       puts "#{@image.errors.full_messages}"
       puts image_params

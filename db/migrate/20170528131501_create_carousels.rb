@@ -6,6 +6,7 @@ class CreateCarousels < ActiveRecord::Migration[5.0]
       t.string  :description
       t.string :tags
 
+      t.timestamps
     end
 
     add_column :images, :carousel_id, :integer, :index => true
