@@ -1,12 +1,12 @@
 <div class="carousel slide" id="myCarousel" data-ride="carousel">
-<!-- Indicators -->
+  <!-- Indicators -->
   <ol class="carousel-indicators">
     <%- carousels.each_with_index do |carousel, index| %>
       <li data-target="#myCarousel" data-slide-to=#{index) class="#{'active' if index == 0}"></li>
     <% end %>
   </ol>
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
+  <div class="carousel-inner" role="listbox">
     <%- carousels.each_with_index do |carousel, index| %>
       <div class="item #{'active' if index == 0}" >
         <%= image_tag('prince.jpg') %>
@@ -19,12 +19,6 @@
     </div>
   <% end %>
 </div>
-<script>
-$(documento).ready(function(){
-  $('#myCarousel').carousel({
-    interval: 2000
-  });
-});
 
- // $('.carousel').carousel()
-</script>
+<%= stylesheet_link_tag "home"%>
+<%= javascript_include_tag "home"%>
