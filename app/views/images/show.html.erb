@@ -1,0 +1,8 @@
+<p><%= link_to 'adicionar', new_image_carousel_path @image   %></p>
+
+<%- @image.carousels.each do |carousel|%>
+  <%= image_tag carousel.url%>
+  <p><%= carousel.name %></p>
+
+<% end %>
+<%= link_to 'images', images_path%>

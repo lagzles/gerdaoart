@@ -2,7 +2,9 @@ class Image < ApplicationRecord
 
   validates :title, presence: true
 
-  mount_uploader :url, ImageUploader
+  # mount_uploader :url, ImageUploader
 
-  belongs_to :carousel
+  has_many :carousels
+
+  belongs_to :category
 end

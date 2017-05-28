@@ -1,18 +1,11 @@
 class Carousel < ApplicationRecord
 
-  validates :name, :category_id, :description, presence: true
+  validates :name, :category_id, :image_id, :order, :url, presence: true
 
-  has_many :images
+  mount_uploader :url, ImageUploader
+
+  belongs_to :image
 
   belongs_to :category
-
-
-  def image_urls
-    urls = Array.new
-    self.images.each do |image|
-      urls << image.url
-    end
-    return urls
-  end
 
 end

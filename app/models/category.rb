@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
 
-  has_many :carousels
+  has_many :images
 end

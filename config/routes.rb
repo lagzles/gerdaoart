@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :carousels
   root 'home#index'
 
   get 'login', to: 'access#login'
@@ -11,9 +10,10 @@ Rails.application.routes.draw do
   resources :abouts
   resources :categories
   resources :images
+  resources :carousels
 
-  resources :carousels do
-    resources :images
+  resources :images do
+    resources :carousels
   end
 
 

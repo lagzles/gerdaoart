@@ -17,14 +17,15 @@ class CarouselsController < ApplicationController
 
   def create
     @carousel = Carousel.new(carousel_params)
-    if @carousel.category_id.nil?
-      category = Category.find_or_create_by(name: "#{params[:category]}")
-      @carousel.category_id = category.id
-    end
+    # if @carousel.category_id.nil?
+    #   category = Category.find_or_create_by(name: "#{params[:category]}")
+    #   @carousel.category_id = category.id
+    # end
 
     if @carousel.valid?
       @carousel.save
-       redirect_to carousels_path, notice: 'Carousel was successfully created.'
+      # redirect_to carousels_path, notice: 'Carousel was successfully created.'
+      redirect_to image_path @carousel.image, notice: 'Carousel was successfully created.'
     else
        render :new
     end
@@ -54,6 +55,6 @@ class CarouselsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def carousel_params
-      params.require(:carousel).permit(:name, :category_id, :description, :tags)
+      params.require(:carousel).permit(:name, :image_id, :description, :url)
     end
 end

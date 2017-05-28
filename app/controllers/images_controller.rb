@@ -18,9 +18,15 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.new(image_params)
+
+    if @image.category_id.nil?
+      category = Category.find_or_create_by(name: "#{params[:category]}")
+      @image.category_id = category.id
+    end
     if @image.valid?
       @image.save
-      redirect_to carousel_path @image.carousel
+      # redirect_to carousel_path @image.carousel
+      redirect_to image_path @image
     else
       puts "#{@image.errors.full_messages}"
       puts image_params
@@ -38,7 +44,7 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:url, :title, :order, :carousel_id)
+    params.require(:image).permit( :title, :order, :category_id)
   end
 
   def set_image
