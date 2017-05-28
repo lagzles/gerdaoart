@@ -1,15 +1,15 @@
-<div class="carousel slide" id="myCarousel" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <%- carousels.each_with_index do |carousel, index| %>
+    <% carousels.each_with_index do |carousel, index| %>
       <li data-target="#myCarousel" data-slide-to=#{index) class="#{'active' if index == 0}"></li>
     <% end %>
   </ol>
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <%- carousels.each_with_index do |carousel, index| %>
-      <div class="item #{'active' if index == 0}" >
-        <%= image_tag('prince.jpg') %>
+  <div class="carousel inner" role="listbox">
+    <% carousels.order(order: :asc).each_with_index do |carousel, index| %>
+      <div class="item #{'active' if index == 0} " >
+        <div class="d-block img-fluid"><%= image_tag('prince.jpg') %> </div>
           <%= link_to image_path(carousel.image) do %>
           <div class="carousel-caption">
             <h2><%= carousel.name %></h2>
@@ -19,6 +19,8 @@
     </div>
   <% end %>
 </div>
-
-<%= stylesheet_link_tag "home"%>
-<%= javascript_include_tag "home"%>
+<script>
+$('.myCarousel').carousel({
+  interval: 2000
+})
+</script>

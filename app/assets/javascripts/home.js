@@ -4,6 +4,6 @@
 //   interval: 2000
 // });
 
-$('#myCarousel').carousel({
+$('#carousel').carousel({
   interval: 2000
 });

@@ -8,6 +8,7 @@ end
 ruby '2.3.3'
 
 #Bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
