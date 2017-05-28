@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'images#index'
+  resources :carousels
+  root 'home#index'
 
   get 'login', to: 'access#login'
   post 'access/attempt_login'

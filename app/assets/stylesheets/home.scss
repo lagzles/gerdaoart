@@ -1,3 +1,39 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Carousel
+#carousel {background-color: antiquewhite}
+#carousel .item > img {width: 100%;}
+
+
+.carousel-caption {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  left: 0;
+  text-align: left;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.carousel-caption a{
+  color: white;
+  text-decoration: none;
+}
+
+.carousel-indicators {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  height: 20px;
+  margin-left: 10px;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
+  color: steelblue;
+}
+
+.carousel-indicators li { opacity: 2; }
