@@ -2,9 +2,8 @@
   <%= f.error_notification%>
   <%= f.input :url, as: :file %>
   <%= f.input :title %>
-  <%= f.input :category_id, :collection => @categories, :label_method => :name, :value_method => :id,
-  :label => 'Categoria'%>
-  <%= text_field_tag :category%>
+  <%= f.input :carousel_id, :collection => Carousel.all, :label_method => :name, :value_method => :id,
+  :label => 'Carrosel'%>
   <%= f.input :description %>
   <%= f.input :tags %>
 

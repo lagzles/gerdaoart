@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update]
   before_action :has_access?, except: [:index, :show]
-  
+
 
   def index
     @images = Image.all.order(:title)
@@ -17,10 +17,6 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.new(image_params)
-    if @image.category_id == nil
-      category = Category.find_or_create_by(name: "#{params[:category]}")
-      @image.category_id = category.id
-    end
     if @image.valid?
       @image.save
       redirect_to images_path
@@ -41,7 +37,7 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:url, :title, :description, :tags, :category_id)
+    params.require(:image).permit(:url, :title, :order, :carousel_id)
   end
 
   def set_image
