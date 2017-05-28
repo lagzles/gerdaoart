@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+// Bootstrap
+//= require bootstrap-sprockets
 //= require bootstrap
 // require turbolinks
 // require_tree .
 
 
-$('.carousel').carousel()
+// $('.carousel').carousel()

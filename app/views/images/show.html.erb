@@ -1,8 +1,14 @@
-<p><%= link_to 'adicionar', new_image_carousel_path @image   %></p>
 
-<%- @image.carousels.each do |carousel|%>
-  <%= image_tag carousel.url%>
-  <p><%= carousel.name %></p>
-
+<h4><%= @image.title%></h4>
+<h5><%= @image.category.name%></h5>
+<%- if logged? %>
+  <%= link_to 'editar', edit_image_carousel_path(@image)%>
+  </br>
+  <%= link_to 'adicionar', new_image_carousel_path(@image)%>
+  </br>
 <% end %>
-<%= link_to 'images', images_path%>
+
+<%- @image.carousels.order(order: :asc).each do |carousel|%>
+  <%= image_tag 'prince.jpg'%>
+  <%= carousel.name %>
+<% end %>

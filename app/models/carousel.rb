@@ -1,11 +1,11 @@
 class Carousel < ApplicationRecord
 
-  validates :name, :category_id, :image_id, :order, :url, presence: true
+  validates :name,  :image_id, :order,  presence: true
 
   mount_uploader :url, ImageUploader
 
   belongs_to :image
 
-  belongs_to :category
+  # belongs_to :category
 
 end

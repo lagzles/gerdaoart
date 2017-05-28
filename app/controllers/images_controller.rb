@@ -13,7 +13,7 @@ class ImagesController < ApplicationController
 
   def new
     @image = Image.new
-    @carousel = Carousel.find(params[:carousel_id])
+    # @carousel = Carousel.find(params[:carousel_id])
   end
 
   def create
