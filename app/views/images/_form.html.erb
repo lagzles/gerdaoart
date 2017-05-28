@@ -4,8 +4,7 @@
   <%= f.input :title %>
   <%= f.input :carousel_id, :collection => Carousel.all, :label_method => :name, :value_method => :id,
   :label => 'Carrosel'%>
-  <%= f.input :description %>
-  <%= f.input :tags %>
+  <%= f.input :order %>
 
   <%= f.button :submit %>
 

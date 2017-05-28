@@ -17,8 +17,13 @@ class CarouselsController < ApplicationController
 
   def create
     @carousel = Carousel.new(carousel_params)
+    if @carousel.category_id.nil?
+      category = Category.find_or_create_by(name: "#{params[:category]}")
+      @carousel.category_id = category.id
+    end
 
-    if @carousel.save
+    if @carousel.valid?
+      @carousel.save
        redirect_to @carousel, notice: 'Carousel was successfully created.'
     else
        render :new
