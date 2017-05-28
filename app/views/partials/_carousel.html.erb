@@ -1,0 +1,22 @@
+<header id="carousel" class="carousel slide">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+  <% carousels.each_with_index do |carousel, i| %>
+    <li data-target="#carousel" data-slide-to=#{i) class="#{'active' if i == 0}"></li>
+  <% end %>
+</ol>
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+  <% carousels.each_with_index do |carousel, i| %>
+    <div class="item #{'active' if i == 0}">
+      <%= image_tag(carousel.url.url) %>
+      <%= link_to image_path(carousel.image) do %>
+        <div class="carousel-caption">
+          <h2><%= carousel.name %></h2>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</header>
+<!-- <script> -->
+<!-- $('.carousel').carousel() -->

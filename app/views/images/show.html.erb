@@ -9,6 +9,6 @@
 <% end %>
 
 <%- @image.carousels.order(order: :asc).each do |carousel|%>
-  <%= image_tag 'prince.jpg'%>
+  <%= image_tag carousel.url.url(:thumb)%>
   <%= carousel.name %>
 <% end %>
