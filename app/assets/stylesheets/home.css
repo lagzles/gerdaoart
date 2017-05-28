@@ -4,8 +4,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
-#carousel {background-color: antiquewhite}
-#carousel .item > img {width: 100%;}
+#myCarousel {background-color: antiquewhite}
+#myCarousel .item > img {width: 100%;}
 
 
 .carousel-caption {

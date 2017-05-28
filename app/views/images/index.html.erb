@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <h2> Index images </h3>
 
 <%- if logged?%>
@@ -28,9 +29,9 @@
 
 <div class='row'>
   <%- @images.each do |image| %>
-    </br>
-    <h4><%= image.title%></h4>
-    </br>
+    <br>
+    <p><%= image.title%></p>
+    <br>
     <%#= carousel_for(image.list_urls)%>
     <%= render partial: 'partials/carousel', locals: {carousels: image.carousels}%>
   <% end %>
