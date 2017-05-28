@@ -6,18 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.3.3'
-
 #Bootstrap
-gem 'bootstrap', '~> 4.0.0.alpha6'
+# gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
-# # S3 amazon direct upload
-# gem 'aws-sdk', '~> 2'
-
 # Upload de images
-# gem 'carrierwave'
-# gem 'fog'
 gem 'carrierwave-aws'
 gem 'mini_magick' # , :git => 'git://github.com/minimagick/minimagick.git', :ref => '6d0f8f953112cce6324a524d76c7e126ee14f392'
 
@@ -53,7 +47,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt' #, '~> 3.1.7'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -74,4 +69,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] #:jruby
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw] #:jruby

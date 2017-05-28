@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: 23b0517e20e7ddf2e733c1bcdb22b0b12166f042
+  specs:
+    bcrypt (3.1.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -49,12 +55,7 @@ GEM
     aws-sdk-resources (2.9.23)
       aws-sdk-core (= 2.9.23)
     aws-sigv4 (1.0.0)
-    bcrypt (3.1.11)
-    bcrypt (3.1.11-x64-mingw32)
     bindex (0.5.0)
-    bootstrap (4.0.0.alpha6)
-      autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -183,8 +184,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  bcrypt (~> 3.1.7)
-  bootstrap (~> 4.0.0.alpha6)
+  bcrypt!
   bootstrap-sass
   byebug
   carrierwave-aws
