@@ -60,6 +60,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
+    bxslider-rails (4.2.5.1)
     carrierwave (1.1.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -186,6 +187,7 @@ DEPENDENCIES
   autoprefixer-rails
   bcrypt!
   bootstrap-sass
+  bxslider-rails
   byebug
   carrierwave-aws
   coffee-rails (~> 4.2)
