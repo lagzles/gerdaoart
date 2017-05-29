@@ -30,9 +30,9 @@
 <div class='row'>
   <%- @images.each do |image| %>
     <br>
-    <p><%= image.title%></p>
+    <!-- <p><%= @images.first.title%></p> -->
     <br>
-    <%#= carousel_for(image.list_urls)%>
-    <%= render partial: 'partials/carousel', locals: {carousels: image.carousels}%>
+    <%= carousel_for(image.list_urls)%>
+    <%#= render partial: 'partials/carousel', locals: {carousels: @images.first.carousels}%>
   <% end %>
 </div>

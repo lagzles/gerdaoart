@@ -10,8 +10,9 @@ class Image < ApplicationRecord
 
 
     def list_urls
-      urls=[]
+      urls = Array.new
       self.carousels.each do |c|
+        puts c.url.url
         urls << c.url.url
       end
       return urls
