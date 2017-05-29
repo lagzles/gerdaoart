@@ -1,10 +1,10 @@
 
-module CarouselsHelper
-  def carousel_for(images)
-    Carousel.new(self, images).html
+module SliderHerlper
+  def slider_for(images)
+    Slider.new(self, images).html
   end
 
-  class Carousel
+  class Slider
     def initialize(view, images)
       @view, @images = view, images
       @uid = SecureRandom.hex(6)

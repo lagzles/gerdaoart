@@ -12,6 +12,8 @@ class Image < ApplicationRecord
     def list_urls
       urls = Array.new
       self.carousels.each do |c|
+        puts 'LISTA DE URLS===================='
+        puts c.url.url
         puts c.url.url
         urls << c.url.url
       end
