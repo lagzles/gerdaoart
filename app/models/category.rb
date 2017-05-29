@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
 
-  has_many :images
+  has_many :drawings
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # root 'home#index'
-  root 'images#index'
+  root 'drawings#index'
 
   get 'login', to: 'access#login'
   post 'access/attempt_login'
@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   resources :abouts
   resources :categories
   resources :images
-  resources :carousels
+  resources :drawings
 
-  resources :images do
-    resources :carousels
+  resources :drawings do
+    resources :images
   end
 
 

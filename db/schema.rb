@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528153321) do
+ActiveRecord::Schema.define(version: 20170529231527) do
 
   create_table "abouts", force: :cascade do |t|
     t.string "body"
-  end
-
-  create_table "carousels", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "image_id"
-    t.integer  "order"
-    t.string   "url"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -32,11 +22,21 @@ ActiveRecord::Schema.define(version: 20170528153321) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", force: :cascade do |t|
+  create_table "drawings", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "category_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "image_id"
+    t.integer  "order"
+    t.string   "url"
   end
 
   create_table "users", force: :cascade do |t|

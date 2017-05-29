@@ -1,0 +1,14 @@
+
+<h4><%= @drawing.title%></h4>
+<h5><%= @drawing.category.name%></h5>
+<%- if logged? %>
+  <%= link_to 'editar', edit_drawing_image_path(@drawing)%>
+  </br>
+  <%= link_to 'adicionar', new_drawing_image_path(@drawing)%>
+  </br>
+<% end %>
+
+<%- @drawing.images.order(order: :asc).each do |image|%>
+  <%= image_tag image.url.url(:thumb)%>
+  <%= image.name %>
+<% end %>

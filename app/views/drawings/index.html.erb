@@ -1,0 +1,47 @@
+<h2> Index images </h3>
+
+<%- if logged?%>
+  <%= link_to 'nova imagem', new_image_path%>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Categoria</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @drawings.each do |drawing| %>
+        <tr>
+          <td><%= link_to drawing.title, drawing_path(drawing)  %></td>
+          <td><%= drawing.category.name %></td>
+          <td><%= link_to 'add images', new_drawing_path(drawing) %></td>
+          |
+          <td><%= link_to 'Destroy', drawing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
+<%- @drawings.each do |drawing| %>
+  <div class='row'>
+    <br>
+    <p><%= drawing.title%></p>
+    <br>
+    <%- drawing.images do |image| %>
+      <div class='col-lg-6 col-md-6 col-sm-12'>
+        <%= link_to drawing_path(image.drawing) do %>
+          <%= image_tag image.url.url(:thumb)%>
+          <div class="carousel-caption">
+            <h2><%= image.name %></h2>
+          </div>
+        <% end %>
+      </div>
+    <%end%>
+  </div>
+  <br>
+<% end %>
+
+<%= render 'partials/carousel'%>
