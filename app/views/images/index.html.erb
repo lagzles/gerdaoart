@@ -23,43 +23,25 @@
     </tbody>
   </table>
 <% end %>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% @carousels.each_with_index do |carousel, index| %>
-      <li data-target="#myCarousel" data-slide-to="#{index)" class="#{'active' if index == 0}"></li>
-    <% end %>
-  </ol>
-  <!-- Wrapper for slides -->
-  <div class="carousel inner" role="listbox">
-    <% @carousels.order(image_id: :asc).order(order: :asc).each_with_index do |carousel, index| %>
-      <div class="item #{'active' if index == 0} " >
-        <div class="d-block img-fluid"><%= image_tag('prince.jpg') %> </div>
-          <%= link_to image_path(carousel.image) do %>
+
+
+<%- @images.each do |image| %>
+  <div class='row'>
+    <br>
+    <p><%= image.title%></p>
+    <br>
+    <%- image.carousels do |carousel| %>
+      <div class='col-lg-6 col-md-6 col-sm-12'>
+        <%= link_to image_path(carousel.image) do %>
+          <%= image_tag carousel.url.url(:thumb)%>
           <div class="carousel-caption">
             <h2><%= carousel.name %></h2>
           </div>
         <% end %>
       </div>
-    </div>
-  <% end %>
-</div>
-<%= stylesheet_link_tag "home" %>
-<%= javascript_include_tag "home" %>
-
-
-
-<div class='row'>
-  <%- @images.each do |image| %>
-    <div class='col-lg-6 col-md-6 col-sm-12'>
-    <br>
-    <p><%= image.title%></p>
-    <br>
-    <%- image.carousels.each do |carousel| %>
-      <%= image_tag carousel.url.url(:thumb)%>
-      <br>
     <%end%>
-    <br>
-    </div>
-  <% end %>
-</div>
+  </div>
+  <br>
+<% end %>
+
+<%= render 'partials/carousel'%>

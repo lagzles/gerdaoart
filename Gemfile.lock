@@ -4,6 +4,13 @@ GIT
   specs:
     bcrypt (3.1.11)
 
+GIT
+  remote: https://github.com/constantm/Flexslider-2-Rails-Gem.git
+  revision: 8d87de030e7b670f11d0cddf0731abb3e2a9aa5c
+  specs:
+    flexslider (2.6.0)
+      sass-rails (>= 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -60,7 +67,6 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
-    bxslider-rails (4.2.5.1)
     carrierwave (1.1.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -187,11 +193,10 @@ DEPENDENCIES
   autoprefixer-rails
   bcrypt!
   bootstrap-sass
-  bxslider-rails
-  byebug
   carrierwave-aws
   coffee-rails (~> 4.2)
   figaro
+  flexslider!
   jbuilder (~> 2.5)
   jquery-rails
   mini_magick
