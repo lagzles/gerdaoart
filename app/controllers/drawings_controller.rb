@@ -5,7 +5,7 @@ class DrawingsController < ApplicationController
 
   def index
     @drawings = Drawing.all.order(:title)
-    @images = Image.all.order(image_id: :asc).order(order: :asc)
+    @images = Image.all.order(drawing_id: :asc).order(order: :asc)
   end
 
   def show

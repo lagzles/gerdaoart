@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20170529231527) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "image_id"
     t.integer  "order"
     t.string   "url"
+    t.integer  "drawing_id"
   end
 
   create_table "users", force: :cascade do |t|
