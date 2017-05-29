@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.all.order(:title)
-    @carousels = Carousel.all.order(created_at: :asc)
+    @carousels = Carousel.all.order(image_id: :asc).order(order: :asc)
   end
 
   def show

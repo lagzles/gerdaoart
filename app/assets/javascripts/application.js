@@ -15,6 +15,5 @@
 // Bootstrap
 //= require bootstrap-sprockets
 //= require bootstrap
-//= require bxslider
 // require turbolinks
 // require_tree .
