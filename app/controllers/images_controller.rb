@@ -41,10 +41,8 @@ class ImagesController < ApplicationController
 
   def destroy
     @image.destroy
-    respond_to do |format|
-      format.html { redirect_to drawings_url, notice: 'Carousel was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to drawings_url, notice: 'Carousel was successfully destroyed.'
+    
   end
 
   private

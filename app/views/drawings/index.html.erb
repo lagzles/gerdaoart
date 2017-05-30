@@ -1,5 +1,3 @@
-<h2> Index images </h3>
-
 <%- if logged?%>
   <%= link_to 'nova imagem', new_drawing_path%>
   <table class="table">
@@ -27,21 +25,13 @@
 
 <%- @drawings.each do |drawing| %>
   <div class='row'>
-    <br>
-    <p><%= drawing.title%></p>
-    <br>
-    <%- drawing.images do |image| %>
-      <div class='col-lg-6 col-md-6 col-sm-12'>
-        <%= link_to drawing_path(image.drawing) do %>
-          <%= image_tag image.url.url(:thumb)%>
-          <div class="carousel-caption">
-            <h2><%= image.name %></h2>
-          </div>
-        <% end %>
-      </div>
-    <%end%>
+    <div class='col-lg-6 col-md-6 col-sm-12'>
+      <h3><%= drawing.title%></h3>
+      <br>
+      <%= link_to drawing_path(drawing) do %>
+        <%= image_tag 'prince.jpg'%>
+        <h5><%= drawing.images.first.name %></h5>
+      <% end %>
+    </div>
   </div>
-  <br>
 <% end %>
-
-<%= render 'partials/carousel'%>
