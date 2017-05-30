@@ -1,5 +1,5 @@
 class DrawingsController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update]
+  before_action :set_image, only: [:show, :edit, :update, :destroy]
   before_action :has_access?, except: [:index, :show]
 
 
@@ -39,6 +39,12 @@ class DrawingsController < ApplicationController
   end
 
   def update
+  end
+
+  def destroy
+
+      @drawing.destroy
+      redirect_to drawings_url, notice: 'Carousel was successfully destroyed.'
   end
 
   private

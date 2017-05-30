@@ -4,7 +4,7 @@ class Drawing < ApplicationRecord
 
   # mount_uploader :url, ImageUploader
 
-  has_many :images
+  has_many :images, :dependent => :destroy
 
   belongs_to :category
 
