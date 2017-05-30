@@ -1,16 +1,13 @@
-<div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-12">
-    <%= simple_form_for @drawing , html: {class: 'form-horizontal'} do |f| %>
-      <%= f.error_notification%>
-      <%= f.input :title %>
-
-      <%= f.input :category_id, :collection => Category.all, :label_method => :name, :value_method => :id,
-      :label => 'Categoria'%>
-
-      <%= text_field_tag :category %>
-
-      <%= f.button :submit %>
-
-    <% end %>
+<%= simple_form_for @drawing , html: {class: 'form-horizontal'} do |f| %>
+  <%= f.error_notification%>
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :category_id, :collection => Category.all, :label_method => :name, :value_method => :id,
+    :label => 'Categoria'%>
   </div>
-</div>
+  <%= text_field_tag :category %>Nome da categoria (se já não houver, criará uma nova)
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

@@ -1,5 +1,7 @@
-<h3>Nova imagem de desenho</h3>
-
-<%= render 'form'%>
-
-<%= link_to 'Back', drawings_path %>
+<div class="row justify-content-md-center">
+  <div class="col-lg-8 col-md-8 col-sm-12 align-self-center">
+    <h3>Nova imagem de desenho</h3>
+    <%= render 'form' %>
+    <%= link_to 'Back', drawing_path(@drawing)  %>
+  </div>
+</div>

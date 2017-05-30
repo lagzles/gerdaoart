@@ -16,3 +16,20 @@
 
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
+
+ // .some-div {
+ //   background-image: url(image-path('background.jpg'));
+ // }
+
+ .background_image {
+     background: image-url('background_jack.jpg') no-repeat  center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100%;
+ }
+//  .background {
+//   background: asset-url("background.png", image);
+//   background: asset-url($asset, $asset-type);
+//   //  background: image-url('background.png');
+// }
