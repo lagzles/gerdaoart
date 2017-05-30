@@ -21,13 +21,20 @@
  //   background-image: url(image-path('background.jpg'));
  // }
 
- .background_image {
-     background: image-url('background_jack.jpg') no-repeat  center fixed;
+ #background_image {
+     background:linear-gradient(to right, rgba(255,255,255,.3), rgba(255,255,255,.4)),
+      image-url('background_jack.jpg') no-repeat  center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: 100%;
+    // background-color: rgba(0,0,0,0.2);
+    // background: rgba(50, 54, 54, 0.1);
+    // background-image: rgba(0,0,0,0.1);
+    // opacity: 0.3;
+    // filter: alpha(opacity = 40);
  }
+
 //  .background {
 //   background: asset-url("background.png", image);
 //   background: asset-url($asset, $asset-type);
