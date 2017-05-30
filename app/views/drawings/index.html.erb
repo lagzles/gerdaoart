@@ -29,7 +29,7 @@
       <h3><%= drawing.title%></h3>
       <br>
       <%= link_to drawing_path(drawing) do %>
-        <%= image_tag 'prince.jpg'%>
+        <%= image_tag drawing.images.first.url.url(:thumb)%>
         <h5><%= drawing.images.first.name %></h5>
       <% end %>
     </div>

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-12">
+  <div class="col-lg-8 col-md-8 col-sm-12 align-self-center">
     <h4><%= @drawing.title%></h4>
     <h5><%= @drawing.category.name%></h5>
     <%- if logged? %>
@@ -10,7 +10,7 @@
     <% end %>
 
     <%- @drawing.images.order(order: :asc).each do |image|%>
-      <%= image_tag image.url.url(:thumb)%>
+      <%= image_tag image.url.url%>
       <%= image.name %>
     <% end %>
   </div>
