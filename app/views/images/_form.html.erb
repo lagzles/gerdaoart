@@ -4,7 +4,17 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :url, as: :file%>
-    <%= f.input :order%>
+    <div class="row">
+      <div class="col-2">
+        <%= f.input :order%>
+      </div>
+      <div class="col-8">
+        <p>Na página inicial, as imagens aparecem em ordem descrescente
+       para que apareçam as imagens mais recentes,
+       estas precisam ter a ordem mais alta</p>
+      </div>
+    </div>
+
     <%= f.input :description%>
     <%= hidden_field_tag :drawing_id, @drawing.id%>
 

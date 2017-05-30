@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
   before_action :set_drawing, only: [:new, :create, :edit, :update, :destroy]
+  before_action :has_access?, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @images = Image.all
