@@ -34,7 +34,7 @@
       <%= link_to drawing_path(drawing) do %>
         <%= image_tag drawing.images.order(order: :desc).first.url.url(:thumb) %>
         <div class="carousel-caption">
-          <h5><%= drawing.images.first.order(order: :desc).name %></h5>
+          <h5><%= drawing.images.order(order: :desc).first.name %></h5>
         </div>
       <% end %>
     </div>
