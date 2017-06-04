@@ -17,10 +17,6 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
- // .some-div {
- //   background-image: url(image-path('background.jpg'));
- // }
-
  #background_image {
      background:linear-gradient(to right, rgba(255,255,255,.3), rgba(255,255,255,.4)),
       image-url('background.jpg') no-repeat  center fixed;
