@@ -1,6 +1,6 @@
-<div class='row justify-content-md-center'>
-  <div class='col-lg-10 col-md-10 col-sm-10'>
-    <%- if logged?%>
+<%- if logged?%>
+  <div class='row justify-content-md-center'>
+    <div class='col-lg-10 col-md-10 col-sm-10'>
       <%= link_to 'novo desenho', new_drawing_path%>
       <table class="table">
         <thead>
@@ -21,10 +21,20 @@
           <% end %>
         </tbody>
       </table>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
+<div class="row justify-content-center">
+  <div class='col-lg-1 col-md-1 col-sm-1'>
+    <%= link_to 'all', root_url%>
+  </div>
+  <%- @categories.each do |category|%>
+    <div class='col-lg-1 col-md-1 col-sm-1'>
+      <%= link_to category.name, root_path(category_id: category.id)%>
+    </div>
+  <% end %>
+</div>
 
 <div class='row'>
   <%- @drawings.each do |drawing| %>
@@ -32,8 +42,9 @@
       <h3><%= drawing.title%></h3>
       <br>
       <%= link_to drawing_path(drawing) do %>
-        <%= image_tag drawing.images.order(order: :desc).first.url.url(:thumb) %>
-        <div class="carousel-caption">
+      drawing.images.order(order: :desc).first.url.url(:thumb)
+        <%= image_tag 'yansn.jpg', size: '550x550', class: 'image-border'%>
+        <div class="image-caption">
           <h5><%= drawing.images.order(order: :desc).first.name %></h5>
         </div>
       <% end %>

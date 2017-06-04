@@ -4,8 +4,13 @@ class DrawingsController < ApplicationController
 
 
   def index
-    @drawings = Drawing.all.order(:title)
-    @images = Image.all.order(drawing_id: :asc).order(order: :asc)
+    case params[:category_id]
+    when nil
+      @drawings = Drawing.all.order(:title)
+    else
+      @drawings = Drawing.order(:title).where(category_id: params[:category_id])
+    end
+    @categories = Category.all
   end
 
   def show
