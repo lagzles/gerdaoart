@@ -24,10 +24,10 @@
     </div>
   </div>
 <% end %>
-
+<br></br>
 <div class="row justify-content-center ">
   <div class='col-lg-1 col-md-1 col-sm-1'>
-    <%= link_to 'all', root_url%>
+    <%= link_to 'all', root_url %>
   </div>
   <%- @categories.each do |category|%>
     <div class='col-lg-1 col-md-1 col-sm-1'>
@@ -42,7 +42,7 @@
       <br></br>
       <%= link_to drawing_path(drawing) do %>
       <!-- drawing.images.order(order: :desc).first.url.url(:thumb) -->
-        <%= image_tag drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
+        <%= image_tag 'yansn.jpg', size: '550x550' , class: 'image-border'%>
         <div class="image-caption">
           <h4><%= drawing.title %></h4>
         </div>

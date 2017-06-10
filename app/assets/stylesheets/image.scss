@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .image-border {
-  border: 5px;
+  border: 4px;
   border-style: solid;
   border-color: rgba(0, 0, 0,.5);
 }
@@ -12,7 +12,7 @@
 .image-caption {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
-  left: 20px;
+  left: 18px;
   text-align: center;
   padding: 10px;
   bottom: 0;
@@ -23,4 +23,5 @@
 .image-caption h4{
   color: white;
   text-decoration: none;
+  text-shadow: 3px 2px black
 }
