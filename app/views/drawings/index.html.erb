@@ -39,6 +39,7 @@
 <div class='row'>
   <%- @drawings.each do |drawing| %>
     <div class='col-lg-6 col-md-6 col-sm-12'>
+      <br></br>
       <%= link_to drawing_path(drawing) do %>
       <!-- drawing.images.order(order: :desc).first.url.url(:thumb) -->
         <%= image_tag drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
