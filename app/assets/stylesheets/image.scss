@@ -8,7 +8,6 @@
   border-color: rgba(0, 0, 0,.5);
 }
 
-
 .image-caption {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
@@ -19,9 +18,27 @@
   width: 550px;
 }
 
-
 .image-caption h4{
   color: white;
   text-decoration: none;
-  text-shadow: 3px 2px black
+  text-transform: lowercase;
+  text-shadow: 2px 2px black;
+  font-size: 35px;
+  font-family: fantasy;
+}
+
+.image-description{
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  text-transform: lowercase;
+  text-align: center;
+  font-family: fantasy;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px;
+  border-style: inset;
+  border-color: grey;
+
 }
