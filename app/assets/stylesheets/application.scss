@@ -29,3 +29,33 @@
  .social-media a{
    text-align: right;
  }
+
+.gerdao-title{
+  color: black;
+  font-family: cursive;
+  font-weight: 300;
+
+}
+
+ .main-menu{
+   font-size: 22px;
+   color: black;
+   font-weight: 300;
+   font-family: cursive;
+ }
+
+ .col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+ .category-menu{
+
+    //  border: 4px;
+    //  border-style: solid;
+    //  border-color: rgba(0, 0, 0,.5);
+ }
+
+ .menus-background{
+   background:linear-gradient(to right, rgba(255,255,255,.3), rgba(255,255,255,.4)),
+ }
