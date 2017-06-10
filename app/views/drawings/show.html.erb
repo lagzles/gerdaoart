@@ -13,7 +13,7 @@
 <div class="row justify-content-md-center">
     <%- @drawing.images.order(order: :asc).each do |image|%>
     <div class="col-lg-8 col-md-8 col-sm-12 align-self-center">
-      <%= image_tag 'yansn.jpg', size: '750x750', class: "image-border"%>
+      <%= image_tag image.url.url, class: "image-border"%>
     <br></br>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-12 align-self-center">
