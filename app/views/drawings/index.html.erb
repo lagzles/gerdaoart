@@ -27,14 +27,15 @@
 <% end %>
 <br></br>
 <div class="row justify-content-center">
-  <div class="col-lg-12 col-md-12 col-sm-12"> Filter
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <p class="filter_title" >Filter</p>
     <div class="row justify-content-center">
       <div class='col-lg-1 col-md-1 col-sm-1'>
-        <%= link_to 'all', root_url, class: "filter" %>
+        <%= link_to 'all', root_url, class: "filter_menu" %>
       </div>
       <%- @categories.each do |category|%>
         <div class='col-lg-1 col-md-1 col-sm-1'>
-          <%= link_to category.name, root_path(category_id: category.id), class: "center-block filter"%>
+          <%= link_to category.name, root_path(category_id: category.id), class: "filter_menu"%>
         </div>
       <% end %>
     </div>
@@ -46,8 +47,7 @@
     <div class='col-lg-6 col-md-6 col-sm-12'>
       <br></br>
       <%= link_to drawing_path(drawing) do %>
-      <!-- drawing.images.order(order: :desc).first.url.url(:thumb) -->
-        <%= image_tag drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
+        <%=  image_tag 'yansn.jpg' %>#drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
         <div class="image-caption">
           <h4><%= drawing.title %></h4>
         </div>
