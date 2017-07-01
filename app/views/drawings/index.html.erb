@@ -47,7 +47,7 @@
     <div class='col-lg-6 col-md-6 col-sm-12'>
       <br></br>
       <%= link_to drawing_path(drawing) do %>
-        <%=  image_tag 'yansn.jpg' %>#drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
+        <%=  image_tag drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
         <div class="image-caption">
           <h4><%= drawing.title %></h4>
         </div>
