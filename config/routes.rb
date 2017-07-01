@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :abouts
+  resources :contact
   resources :categories
   resources :images
   resources :drawings

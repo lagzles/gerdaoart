@@ -26,15 +26,19 @@
   </div>
 <% end %>
 <br></br>
-<div class="row justify-content-center ">
-  <div class='col-lg-1 col-md-1 col-sm-1'>
-    <%= link_to 'all', root_url %>
-  </div>
-  <%- @categories.each do |category|%>
-    <div class='col-lg-1 col-md-1 col-sm-1'>
-      <%= link_to category.name, root_path(category_id: category.id), class: "center-block"%>
+<div class="row justify-content-center">
+  <div class="col-lg-12 col-md-12 col-sm-12"> Filter
+    <div class="row justify-content-center">
+      <div class='col-lg-1 col-md-1 col-sm-1'>
+        <%= link_to 'all', root_url, class: "filter" %>
+      </div>
+      <%- @categories.each do |category|%>
+        <div class='col-lg-1 col-md-1 col-sm-1'>
+          <%= link_to category.name, root_path(category_id: category.id), class: "center-block filter"%>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
 
 <div class='row'>
