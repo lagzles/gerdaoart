@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
-  before_action :set_drawing, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_drawing, only: [:new, :create, :edit, :update]
   before_action :has_access?, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -46,7 +46,7 @@ class ImagesController < ApplicationController
   def destroy
     drawing = @image.drawing
     @image.destroy
-    redirect_to drawing_url(drawing), notice: 'Image was successfully destroyed.'
+    redirect_to drawing_path(drawing), notice: 'Image was successfully destroyed.'
   end
 
   private
