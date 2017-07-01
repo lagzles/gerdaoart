@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @drawings.each do |drawing| %>
+          <% @drawings_all.each do |drawing| %>
             <tr>
               <td><%= link_to drawing.title, drawing_path(drawing)  %></td>
               <td><%= drawing.category.name %></td>
@@ -27,7 +27,15 @@
 <% end %>
 <br></br>
 <div class="row justify-content-center">
-  <div class="col-lg-12 col-md-12 col-sm-12">
+  <div class="col-lg-1 col-md-1 col-sm-1">
+    <%- if @drawing_count > 6 %>
+      <%= link_to root_path(category_id: params[:category_id], counting: @first_count - 6), class: 'pagination' do %>
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-lg-10 col-md-10 col-sm-10">
     <p class="filter_title" >Filter</p>
     <div class="row justify-content-center">
       <div class='col-lg-1 col-md-1 col-sm-1'>
@@ -40,6 +48,14 @@
       <% end %>
     </div>
   </div>
+  <div class="col-lg-1 col-md-1 col-sm-1">
+    <%- if @drawing_count > 6 %>
+      <%= link_to root_path(category_id: params[:category_id], counting: @last_count), class: 'pagination' do %>
+        <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
 <div class='row'>
@@ -47,7 +63,7 @@
     <div class='col-lg-6 col-md-6 col-sm-12'>
       <br></br>
       <%= link_to drawing_path(drawing) do %>
-        <%=  image_tag 'yansn.jpg', size:'550x550' %>#drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
+        <%=  image_tag drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
         <div class="image-caption">
           <h4><%= drawing.title %></h4>
         </div>

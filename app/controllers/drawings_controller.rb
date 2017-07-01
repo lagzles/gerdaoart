@@ -4,12 +4,38 @@ class DrawingsController < ApplicationController
 
 
   def index
-    case params[:category_id]
-    when nil
-      @drawings = Drawing.all.order(:title)
+
+    if params[:counting] == nil
+      counting = 0
     else
-      @drawings = Drawing.order(:title).where(category_id: params[:category_id])
+      # counting = DateTime.parse(params[:counting])
+      # draw = Drawing.find(params[:counting])
+      counting = params[:counting]#draw.created_at
     end
+    puts counting
+    puts counting
+    puts counting
+
+    if params[:category_id] == nil
+      @drawings_all = Drawing.all
+      @drawing_count = @drawings_all.count
+      if counting == 0
+        @drawings = Drawing.limit(6).order(created_at: :asc)
+        puts "counting zero"
+      else
+        puts "counting nao eh zero"
+        puts counting
+        puts "counting nao eh zero"
+
+        @drawings = Drawing.where("id > #{(counting)}").order(created_at: :asc).limit(6)
+      end
+    else
+      @drawings_all = Drawing.where(category_id: params[:category_id])
+      @drawing_count = @drawings_all.count
+      @drawings = Drawing.where(category_id: params[:category_id]).where('id > ?', counting).order(created_at: :asc).limit(6)
+    end
+    @first_count = @drawings.first.id
+    @last_count = @drawings.last.id
     @categories = Category.all
   end
 

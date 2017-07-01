@@ -12,13 +12,15 @@
 </div>
 <div class="row justify-content-md-center">
     <%- @drawing.images.order(order: :asc).each do |image|%>
-    <div class="col-lg-8 col-md-8 col-sm-12 align-self-center">
-      <%= image_tag image.url.url, class: "image-border"%>
+    <div class="col-lg-9 col-md-9 col-sm-12 align-self-center">
+      image.url.url, class: "image-border"
+      <%= image_tag 'yansn.jpg', size:'800x800' %>
     <br></br>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-12 align-self-center">
       <div class="image-description">
         <%= image.name%>
+        <br>
         <%= image.description %>
       </div>
       <%= link_to 'editar', edit_drawing_image_path(@drawing, image) if logged?%>
