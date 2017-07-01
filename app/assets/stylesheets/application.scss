@@ -35,7 +35,8 @@
   text-shadow: 3px 0px grey;
   font-size: 40px;
   text-decoration: underline;
-  position: static;
+  text-align: center;
+  // position: static;
 }
 
 .fa { color: black; }
@@ -51,6 +52,7 @@
    font-weight: 300;
    font-family: cursive;
    padding: 20px;
+   text-align: center;
  }
 
 .filter{
