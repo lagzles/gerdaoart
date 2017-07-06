@@ -35,8 +35,7 @@
   text-shadow: 3px 0px grey;
   font-size: 40px;
   text-decoration: underline;
-  text-align: center;
-  // position: static;
+  padding-left: 15px;
 }
 
 .fa { color: black; }
@@ -71,9 +70,4 @@
 .filter_menu{
   @extend .filter;
   font-size: 18px;
-}
-
-.pagination {
-  color: black;
-  font-size: 25px;
 }
