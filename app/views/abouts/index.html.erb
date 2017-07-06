@@ -3,7 +3,7 @@
 <%- @abouts.each do |about| %>
   <p><%= about.body %></p>
   <p><%= link_to 'editar', edit_about_path(about) if logged?%></p>
-  <p><%= link_to 'deletar', about, method: delete, data: { confirm: 'Are you certain? Tem certeza de que quer fazer isso?'} if logged?%></p>
+  <p><%= link_to 'deletar', about, method: :delete, data: { confirm: 'Are you certain? Tem certeza de que quer fazer isso?'} if logged?%></p>
 <% end %>
 
 <%= link_to 'Criar About', new_about_path if logged?%>
