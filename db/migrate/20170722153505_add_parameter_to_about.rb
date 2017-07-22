@@ -1,9 +1,19 @@
 class AddParameterToAbout < ActiveRecord::Migration[5.0]
   def up
-    add_column :abouts, :pinned, :boolean, :default => false
+    drop_table :abouts
+
+    create_table :abouts do |t|
+      t.string :body
+      t.boolean :pinned, :default => false
+      t.timestamps
+    end
   end
 
   def down
-    remove_column :abouts, :pinned
+    drop_table :abouts
+
+    create_table :abouts do |t|
+      t.string :body
+    end
   end
 end

@@ -3,6 +3,8 @@ class CreateAbouts < ActiveRecord::Migration[5.0]
     create_table :abouts do |t|
       t.string :body
 
+      t.timestamps
+
     end
   end
 

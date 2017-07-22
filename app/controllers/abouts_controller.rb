@@ -1,10 +1,11 @@
 class AboutsController < ApplicationController
   before_action :set_about, only: [:show, :edit, :update, :destroy]
   before_action :has_access?, except: [:index, :show]
-  
+
 
   def index
-    @abouts = About.all
+    @abouts_pinned = About.where(pinned: true).order(:created_at)
+    @abouts_not_pinned = About.where(pinned: false).order(:created_at)
   end
 
   def show
@@ -49,6 +50,6 @@ class AboutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def about_params
-      params.require(:about).permit(:body)
+      params.require(:about).permit(:body, :pinned)
     end
 end

@@ -1,11 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<%- @abouts.each do |about| %>
-  <p><%= about.body %></p>
-  <%- if logged? %>
-    <p><%= link_to 'editar', edit_about_path(about)%></p>
-    <p><%= link_to 'deletar', about, method: :delete, data: { confirm: 'Are you certain? Tem certeza de que quer fazer isso?'}%></p>
-    <% end %>
-<% end %>
+<div >
+  <%- @abouts_pinned.each do |about| %>
+    <p><%= about.body %></p>
+    <%- if logged? %>
+      <p><%= link_to 'editar', edit_about_path(about)%></p>
+      <p><%= link_to 'deletar', about, method: :delete, data: { confirm: 'Are you certain? Tem certeza de que quer fazer isso?'}%></p>
+      <% end %>
+  <% end %>
+</div>
+<div >
+  <%- @abouts_not_pinned.each do |about| %>
+    <p><%= about.body %></p>
+    <%- if logged? %>
+      <p><%= link_to 'editar', edit_about_path(about)%></p>
+      <p><%= link_to 'deletar', about, method: :delete, data: { confirm: 'Are you certain? Tem certeza de que quer fazer isso?'}%></p>
+      <% end %>
+  <% end %>
+</div>
+
 
 <%= link_to 'Criar About', new_about_path if logged?%>
