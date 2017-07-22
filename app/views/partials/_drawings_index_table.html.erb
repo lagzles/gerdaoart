@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<div class='row justify-content-md-center'>
+  <div class='col-lg-10 col-md-10 col-sm-10'>
+    <%= link_to 'novo desenho', new_drawing_path%>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome do desenho</th>
+          <th>Categoria</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @drawings_all.each do |drawing| %>
+          <tr>
+            <td><%= link_to drawing.title, drawing_path(drawing)  %></td>
+            <td><%= drawing.category.name %></td>
+            <td><%= link_to 'add images', new_drawing_path(drawing) %></td>
+            <td><%= link_to 'deletar', drawing, method: :delete, data: { confirm: 'isso vai fazer com que todos os desenhos sejam deletados junto, tem certeza?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
