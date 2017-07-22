@@ -2,6 +2,8 @@
   <%= f.error_notification%>
   <%= f.input :body, as: :text %>
   <%= f.input :pinned, label:"Fixar no Topo"%>
+  <%= f.input :url_address, as: :string, label:"URL (caso tenha)"%>
+  <%= f.input :url_title, as: :string, label:"Titulo do link (caso tenha)"%>
 
   <%= f.button :submit %>
 

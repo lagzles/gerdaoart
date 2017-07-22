@@ -19,6 +19,10 @@
         <%= about.created_at.strftime("%d/%b/%y")%>
         <br/>
         <%= about.body %>
+        <%- if about.url_address != nil%>
+          <br/> - <br/>
+          <%= link_to about.url_title, "#{about.url_address}" %>
+        <% end %>
       </p>
       <%- if logged? %>
         <p>

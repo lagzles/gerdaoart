@@ -20,6 +20,9 @@ class AboutsController < ApplicationController
 
   def create
     @about = About.new(about_params)
+    if @about.url_title == nil or @about.url_title == ""
+      @about.url_title = "Check it here."
+    end
 
     if @about.valid?
       @about.save
@@ -31,6 +34,10 @@ class AboutsController < ApplicationController
 
   def update
     if @about.update(about_params)
+      if @about.url_title == nil or @about.url_title == ""
+        @about.url_title = "Check it here."
+        @about.save
+      end
       redirect_to abouts_url, notice: 'About was successfully updated.'
     else
       render :edit
@@ -50,6 +57,6 @@ class AboutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def about_params
-      params.require(:about).permit(:body, :pinned)
+      params.require(:about).permit(:body, :pinned, :url_address, :url_title)
     end
 end
