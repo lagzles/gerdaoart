@@ -56,27 +56,28 @@
  }
 
 .filter{
-  color: black;
-  font-weight: 500;
   text-align: center;
-  font-family: monospace;
   vertical-align: middle;
+}
+.filter-style{
+  color: black;
+  font-family: monospace;
+  font-weight: 500;
 
 }
 
-
 .filter_title {
-  @extend .filter;
+  @extend .filter-style;
   font-size: 20px;
 }
 
 .filter_menu{
-  @extend .filter;
-  padding-top: 20px;
+  @extend .filter-style;
   font-size: 18px;
+  vertical-align: middle;
 }
 
 .pagination {
-  @extend .filter;
+  @extend .filter-style;
 
 }
