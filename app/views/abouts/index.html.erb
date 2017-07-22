@@ -2,20 +2,32 @@
 
 <div >
   <%- @abouts_pinned.each do |about| %>
-    <p><%= about.body %></p>
+    <p class="pinned-about"><%= about.body %></p>
     <%- if logged? %>
-      <p><%= link_to 'editar', edit_about_path(about)%></p>
-      <p><%= link_to 'deletar', about, method: :delete, data: { confirm: 'Are you certain? Tem certeza de que quer fazer isso?'}%></p>
-      <% end %>
+      <p>
+        <%= link_to 'editar', edit_about_path(about)%>
+        /
+        <%= link_to 'deletar', about, method: :delete, data: { confirm: 'Are you certain? Tem certeza de que quer fazer isso?'}%>
+      </p>
+    <% end %>
   <% end %>
 </div>
-<div >
+<div class="row">
   <%- @abouts_not_pinned.each do |about| %>
-    <p><%= about.body %></p>
-    <%- if logged? %>
-      <p><%= link_to 'editar', edit_about_path(about)%></p>
-      <p><%= link_to 'deletar', about, method: :delete, data: { confirm: 'Are you certain? Tem certeza de que quer fazer isso?'}%></p>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+      <p class="not-pinned-about">
+        <%= about.created_at.strftime("%d/%b/%y")%>
+        <br/>
+        <%= about.body %>
+      </p>
+      <%- if logged? %>
+        <p>
+          <%= link_to 'editar', edit_about_path(about)%>
+          /
+          <%= link_to 'deletar', about, method: :delete, data: { confirm: 'Are you certain? Tem certeza de que quer fazer isso?'}%>
+        </p>
       <% end %>
+    </div>
   <% end %>
 </div>
 

@@ -5,7 +5,7 @@ class AboutsController < ApplicationController
 
   def index
     @abouts_pinned = About.where(pinned: true).order(:created_at)
-    @abouts_not_pinned = About.where(pinned: false).order(:created_at)
+    @abouts_not_pinned = About.where(pinned: false).order(created_at: :desc)
   end
 
   def show

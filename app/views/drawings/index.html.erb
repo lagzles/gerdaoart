@@ -5,11 +5,10 @@
 <div class="row justify-content-center filter">
   <div class="col-lg-12 col-md-12 col-sm-12">
     <div class="row justify-content-center">
-      <div class="col-lg-1 col-md-1 col-sm-1">
+      <div class="col-lg-2 col-md-2 col-sm-2">
         <%- if @drawing_count > 6 %>
           <%= link_to root_path(category_id: params[:category_id], counting: @first_count - 6), class:'pagination' do %>
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
           <% end %>
         <% end %>
       </div>
@@ -22,10 +21,9 @@
           <%= link_to category.name, root_path(category_id: category.id), class:"filter_menu"%>
         </div>
       <% end %>
-      <div class="col-lg-1 col-md-1 col-sm-1">
+      <div class="col-lg-2 col-md-2 col-sm-2">
         <%- if @drawing_count > 6 %>
           <%= link_to root_path(category_id: params[:category_id], counting: @last_count), class:'pagination' do %>
-            <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <% end %>
         <% end %>
@@ -39,8 +37,8 @@
     <div class='col-lg-6 col-md-6 col-sm-12'>
       <br></br>
       <%= link_to drawing_path(drawing) do %>
-        <%= image_tag 'yansn.jpg', size:'550x550'%>
-        <%- # image_tag drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
+        <%- # image_tag 'yansn.jpg', size:'550x550'%>
+        <%= image_tag drawing.images.order(order: :desc).first.url.url(:thumb) , class: 'image-border'%>
         <div class="image-caption">
           <h4><%= drawing.title %></h4>
         </div>

@@ -1,3 +1,27 @@
 // Place all the styles related to the Abouts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about-defaults{
+  text-align: center;
+  font-family: monospace;
+  border: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0,.3);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+
+}
+
+.pinned-about{
+  font-size: 20px;
+  padding: 20px;
+  @extend .about-defaults;
+}
+
+.not-pinned-about{
+  @extend .about-defaults;
+  font-size: 15px;
+  padding: 15px;
+
+}

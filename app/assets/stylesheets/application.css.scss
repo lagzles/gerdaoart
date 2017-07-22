@@ -28,6 +28,10 @@
 
  .social-media a{ text-align: right; }
 
+ .login-link{
+   color: black;
+ }
+
 .gerdao-title{
   color: black;
   font-family: monospace;
@@ -75,7 +79,8 @@
   @extend .filter-style;
   font-size: 18px;
   vertical-align: middle;
-  padding-top: 20px
+  display: inline-block;
+  margin: 15px 0;
 }
 
 .pagination {
