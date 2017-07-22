@@ -10,12 +10,12 @@
 .image-border {
   border: 4px;
   border-style: solid;
-  border-color: rgba(0, 0, 0,.5);
+  border-color: rgba(255, 2550, 255,.5);
 }
 
 .image-caption {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   left: 18px;
   text-align: center;
   padding: 10px;
@@ -24,7 +24,7 @@
 }
 
 .image-caption h4{
-  color: white;
+  color: black;
   text-decoration: none;
   text-transform: lowercase;
   font-size: 35px;
